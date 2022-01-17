@@ -37,3 +37,15 @@ test("shuold have empoty input when add button is click", () => {
   fireEvent.click(buttonElement);
   expect(inputElement.value).toBe("");
 });
+
+
+it("sholud not add item when input in empty" , () => {
+  render(<AddInput todos={mockTodos} setTodos={mockSetTodo} />);
+  const inputElement = screen.getByPlaceholderText(
+    /Add a new task here.../i
+  ) as HTMLInputElement;
+  const buttonElement = screen.getByRole("button", { name: /Add/i }); 
+  expect(inputElement.value).toBe("");
+  expect(buttonElement).toBeDisabled();
+
+})

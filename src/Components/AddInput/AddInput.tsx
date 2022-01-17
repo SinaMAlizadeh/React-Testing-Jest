@@ -29,7 +29,7 @@ function AddInput({ todos, setTodos }: AddInputProps) {
         onChange={(e) => setTodo(e.target.value)}
         placeholder="Add a new task here..."
       />
-      <button onClick={addTodo}>Add</button>
+      <button onClick={addTodo} disabled={todo == ""}>Add</button>
     </div>
   );
 }
